@@ -42,7 +42,7 @@ To run this project locally:
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/yourusername/qr-code-scanner.git
+    git clone https://github.com/bhutta03/qr-code-scanner.git
     ```
 
 2. Navigate to the project folder and open the `index.html` file in your browser.
