@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Code Scanner</title>
+  
+  <!-- Linking the external stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Including ZXing library for QR code scanning -->
+  <script src="https://cdn.rawgit.com/zxing/zxing/master/core/target/zxing-core.js"></script>
+  <script src="https://cdn.rawgit.com/zxing/zxing/master/browser/target/zxing-browser.js"></script>
+</head>
+<body>
+  <!-- Container for the QR code scanner functionality -->
+  <div class="scanner-container">
+    <h1>Free QR Code Scanner</h1>
+    <p>Scan the QR code online with our QR reader. Upload a QR code image or directly access the webcam to scan and read it in real-time.</p>
+
+    <!-- Links to toggle between uploading an image or using the camera to scan -->
+    <div class="links">
+      <a href="#" id="toggleUpload" class="clickable-link" style="font-weight: bold; color: #343A40;" onclick="showUpload(); return false;">
+        <img src="upload.png" alt="Upload" class="icon"> Upload Image
+      </a>
+      <a href="#" id="toggleCamera" class="clickable-link" style="font-weight: bold; color: #343A40;" onclick="showCamera(); return false;">
+        <img src="camera.png" alt="Camera" class="icon"> Scan QR Code
+      </a>
+    </div>
+
+    <!-- Section for uploading an image to scan QR code -->
+    <div id="imageUploadScanner" class="hidden-section">
+      <div class="upload-area" id="uploadDiv">
+        <label class="upload-label" id="uploadLink">
+          <img src="upload.png" alt="Upload Icon" class="upload-icon">
+          <span class="upload-text">Upload QR Code</span> <!-- Displayed upload text -->
+        </label>
+        
+        <!-- File input for uploading an image -->
+        <input type="file" id="fileInput" accept="image/*" />
+        
+        <!-- Container to display the uploaded image -->
+        <div id="uploadedImageContainer" style="display: none;">
+          <p id="uploadAnotherLabel" style="display: none;">Upload another image</p>
+          <img id="uploadedImage" alt="Uploaded QR Code" />
+        </div>
+      </div>
+      <p id="uploadResult">Upload a QR code image to see the result here</p>
+    </div>
+
+    <!-- Section for scanning QR code via the device camera -->
+    <div id="cameraScanner" class="hidden-section">
+      <div class="upload-area">
+        <video id="video" playsinline autoplay></video> <!-- Video stream for camera scanning -->
+      </div>
+      <p id="cameraResult">Scan a QR code to see the result here</p>
+    </div>
+  </div>
+
+  <!-- Including ZXing library for handling QR code scanning via camera or image upload -->
+  <script src="https://unpkg.com/@zxing/library@latest"></script>
+  <script src="scanner.js"></script>
+
+  <script>
+    // Function to show the image upload section and hide the camera section
+    function showUpload() {
+      document.getElementById('imageUploadScanner').style.display = 'block'; // Show upload section
+      document.getElementById('cameraScanner').style.display = 'none'; // Hide camera section
+    }
+
+    // Function to show the camera section and hide the image upload section
+    function showCamera() {
+      document.getElementById('imageUploadScanner').style.display = 'none'; // Hide upload section
+      document.getElementById('cameraScanner').style.display = 'block'; // Show camera section
+      startCamera(); // Start the camera when this section is visible
+    }
+
+    // Initial setup: show the upload section by default
+    showUpload();
+
+    // Event listener to trigger file input when clicking the upload area
+    document.getElementById("uploadDiv").addEventListener("click", function (event) {
+      // Ensure that clicking within the upload div triggers the file input
+      if (event.target === this || event.target === document.getElementById("uploadLink")) {
+        document.getElementById("fileInput").click(); // Trigger the file input click
+      }
+    });
+  </script>
+</body>
+</html>

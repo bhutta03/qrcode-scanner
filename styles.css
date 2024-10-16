@@ -1,0 +1,247 @@
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f7f7f7;
+  display: flex;
+  justify-content: flex-start; /* Aligns the content to the left */
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  color: #333;
+}
+
+/* Adjusted scanner-container to fit the upload area */
+.scanner-container {
+  text-align: left; /* Aligns text and header to the left */
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 90%; /* 90% of the viewport width */
+  height: auto; /* Set height to auto to grow with content */
+  min-height: 850px; /* Minimum height to fit the upload area */
+  position: absolute; /* Positioning the container */
+  top: 5%; /* Optional: Add some space from the top */
+  left: 0; /* Attach to the left side of the screen */
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: black;
+}
+
+p {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+/* Links */
+.links {
+  margin-bottom: 20px;
+  display: flex; /* Use flexbox for horizontal alignment */
+  justify-content: flex-start; /* Align the links to the left */
+}
+
+a.clickable-link {
+  display: flex; /* Flexbox to align icon and text */
+  align-items: center; /* Vertically aligns items */
+  color: black; /* Default color is black */
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: normal; /* Make text simple, non-bold */
+  margin: 10px;
+  transition: color 0.3s ease;
+  position: relative; /* Needed for underline effect */
+}
+
+a.clickable-link:hover {
+  color: #343A40; /* Blue color on hover */
+}
+
+a.clickable-link.active {
+  color: #343A40; /* Active link color */
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px; /* Space between icon and text */
+}
+
+a.clickable-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 2px;
+  background: transparent;
+  transition: background 0.3s ease;
+}
+
+a.clickable-link:hover::after,
+a.clickable-link.active::after {
+  background: #343A40; /* Underline changes to blue on hover or when active */
+}
+
+.links a:first-child {
+  margin-bottom: 15px;
+}
+
+/* Upload Area Styles */
+.upload-area {
+  border: 2px dashed gray; /* Change dashed border to gray */
+  padding: 15px;
+  margin: 15px 0;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  height: 650px; /* Increased height */
+  width: 100%; /* Full width of its parent container */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; /* Aligns children vertically */
+}
+
+/* Upload label and image container */
+.upload-label {
+  display: flex; /* Use flexbox to align icon and text */
+  flex-direction: column; /* Stack icon above text */
+  align-items: center; /* Vertically align items */
+  color: #AFAFAF; /* Set color to gray */
+  font-weight: bold; /*Make text bold */
+  font-size: 30px; /* Font size */
+}
+
+
+.upload-icon {
+  filter: grayscale(90%) brightness(90%); /* Adjust for a grayish color */
+  margin-bottom: 5px; /* Space between icon and text */
+  width: 40px; /* Adjust icon size */
+  height: 40px; /* Adjust icon size */
+  margin-right: 8px; /* Add space between the icon and the text */
+  vertical-align: middle; /* Align the icon with the text vertically */
+}
+
+.upload-text {
+  font-size: 30px; /* Adjust text size */
+  font-weight: 500; /* Less bold */
+  color: #AFAFAF; /* Change text color to light gray */
+}
+
+
+
+.upload-area:hover {
+  background-color: #e9f5ff;
+  border-color: #4a90e2; /* Change border color when hovered */
+}
+
+input[type="file"] {
+  display: none; /* Hides the file input */
+}
+
+/* Uploaded Image Styles */
+#uploadedImageContainer {
+  margin-top: 10px; /* Space above the image */
+  text-align: center; /* Center the uploaded image and text */
+  display: none; /* Hidden by default */
+}
+
+#uploadedImage {
+  max-width: 100%; /* Make sure the image fits within the upload area */
+  max-height: 150px; /* Set a maximum height */
+  object-fit: contain; /* Keep the aspect ratio */
+  border: 2px solid #ddd; /* Optional border for better visibility */
+  border-radius: 8px; /* Optional rounding of corners */
+}
+
+.result-box {
+  background-color: #f8f9fa; /* Light background */
+  border: 1px solid #ced4da; /* Border color */
+  padding: 5px; /* Further reduced padding */
+  border-radius: 4px; /* Slightly smaller radius */
+  font-family: monospace; /* Monospace font */
+  margin: 2px 0; /* Reduced margin for closer spacing */
+  font-size: 13px; /* Smaller font size */
+  line-height: 1.2; /* Reduced line height for less space between lines */
+  text-align: left;
+}
+
+
+
+/* Camera Section Styles */
+#cameraScanner {
+  height: 180px;
+}
+
+#video {
+  transform: scaleX(-1); /* Flip the video horizontally */
+  width: 100%;
+  height: 100%;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Result Display Styles */
+#uploadResult, #cameraResult {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* Start Button Styles */
+.start-button {
+  background-color: #4a90e2;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.start-button:hover {
+  background-color: #0056b3;
+}
+
+/* Hidden Section */
+.hidden-section {
+  display: none;
+}
+
+/* Media Query for Responsive Design */
+@media (max-width: 768px) {
+  .scanner-container {
+    width: 100%; /* Take full width on smaller screens */
+    padding: 15px;
+  }
+
+  .upload-area {
+    height: auto; /* Allow the upload area to shrink on small screens */
+    min-height: 300px; /* Set a minimum height */
+  }
+}
+
+@media (max-width: 480px) {
+  .scanner-container {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .upload-area {
+    height: auto;
+    min-height: 200px;
+  }
+}
+
+
