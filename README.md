@@ -47,12 +47,6 @@ To run this project locally:
 
 2. Navigate to the project folder and open the `index.html` file in your browser.
 
-No additional setup is required.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
-
 ---
 
 **Enjoy using this QR Code Scanner!**
