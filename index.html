@@ -60,31 +60,5 @@
   <!-- Including ZXing library for handling QR code scanning via camera or image upload -->
   <script src="https://unpkg.com/@zxing/library@latest"></script>
   <script src="scanner.js"></script>
-
-<!--   <script>
-    // Function to show the image upload section and hide the camera section
-    function showUpload() {
-      document.getElementById('imageUploadScanner').style.display = 'block'; // Show upload section
-      document.getElementById('cameraScanner').style.display = 'none'; // Hide camera section
-    }
-
-    // Function to show the camera section and hide the image upload section
-    function showCamera() {
-      document.getElementById('imageUploadScanner').style.display = 'none'; // Hide upload section
-      document.getElementById('cameraScanner').style.display = 'block'; // Show camera section
-      startCamera(); // Start the camera when this section is visible
-    }
-
-    // Initial setup: show the upload section by default
-    showUpload();
-
-    // Event listener to trigger file input when clicking the upload area
-    document.getElementById("uploadDiv").addEventListener("click", function (event) {
-      // Ensure that clicking within the upload div triggers the file input
-      if (event.target === this || event.target === document.getElementById("uploadLink")) {
-        document.getElementById("fileInput").click(); // Trigger the file input click
-      }
-    });
-  </script> -->
 </body>
 </html>
