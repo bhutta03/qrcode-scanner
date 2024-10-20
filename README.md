@@ -47,6 +47,10 @@ To run this project locally:
 
 2. Navigate to the project folder and open the `index.html` file in your browser.
 
+## Live Demo
+
+You can try out the live demo of the [Qr Code Scanner(https://qr-code-scanner-plum.vercel.app/).
+
 ---
 
 **Enjoy using this QR Code Scanner!**
