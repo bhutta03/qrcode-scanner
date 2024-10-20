@@ -48,10 +48,7 @@ function formatDecodedData(data) {
             ${data}
         </div>
     `;
-
 }
-
-
 
 // Function to handle file upload
 fileInput.addEventListener('change', handleFileUpload);
@@ -101,4 +98,27 @@ function startCamera() {
 uploadLink.addEventListener('click', function() {
     fileInput.value = ''; // Reset the file input
     uploadResult.innerHTML = 'Upload a QR code image to see the result here'; // Reset result text
+});
+
+// Function to show the upload section and hide the camera section
+function showUpload() {
+    document.getElementById('imageUploadScanner').style.display = 'block';
+    document.getElementById('cameraScanner').style.display = 'none';
+}
+
+// Function to show the camera section and hide the upload section
+function showCamera() {
+    document.getElementById('imageUploadScanner').style.display = 'none';
+    document.getElementById('cameraScanner').style.display = 'block';
+    startCamera(); // Start the camera when showing the camera section
+}
+
+// Initial setup to show upload section by default
+showUpload();
+
+// Handle click anywhere in the upload area to trigger file upload
+document.getElementById("uploadDiv").addEventListener("click", function (event) {
+    if (event.target === this || event.target === document.getElementById("uploadLink")) {
+        document.getElementById("fileInput").click();
+    }
 });
