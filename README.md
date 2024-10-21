@@ -49,7 +49,7 @@ To run this project locally:
 
 ## Live Demo
 
-You can try out the live demo of the [QR Code Scanner](https://qr-code-scanner-plum.vercel.app/).  
+You can try out the [live demo](https://qrcode-scans.vercel.app/) of the QR Code Scanner.  
 
 
 ---
