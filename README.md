@@ -41,9 +41,8 @@ To run this project locally:
 
 Clone the repository:
 
-    ```bash
     git clone https://github.com/bhutta03/qr-code-scanner.git
-    ```
+
 
 
 
