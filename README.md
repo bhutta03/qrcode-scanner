@@ -39,17 +39,11 @@ This project is a simple yet powerful **QR Code Scanner** web application. It al
 
 To run this project locally:
 
-1. Clone the repository:
+Clone the repository:
 
     ```bash
     git clone https://github.com/bhutta03/qr-code-scanner.git
     ```
-
-2. Navigate to the project folder and open the `index.html` file in your browser.
-
-## Live Demo
-
-You can try out the [live demo](https://qrcode-scans.vercel.app/) of the QR Code Scanner.  
 
 
 ---
