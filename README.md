@@ -46,6 +46,8 @@ Clone the repository:
     ```
 
 
+
+
 ---
 
 **Enjoy using this QR Code Scanner!**
